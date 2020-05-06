@@ -1,5 +1,4 @@
-# Test de aceptación con HIL
-[![Build Status](https://api.travis-ci.org/joacomf/hardsting.svg?branch=master)](https://api.travis-ci.org/joacomf/hardsting.svg?branch=master)
+# Test de aceptación con HIL [![Build Status](https://api.travis-ci.org/joacomf/hardsting.svg?branch=master)](https://travis-ci.com/github/joacomf/hardsting)
 
 
 ### Instalación entorno
