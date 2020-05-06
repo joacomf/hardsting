@@ -1,5 +1,5 @@
 # Test de aceptación con HIL
-[![Build Status](https://api.travis-ci.org/joacomf/esphil-testing.svg?branch=master)](https://api.travis-ci.org/joacomf/esphil-testing.svg?branch=master)
+[![Build Status](https://api.travis-ci.org/joacomf/hardsting.svg?branch=master)](https://api.travis-ci.org/joacomf/hardsting.svg?branch=master)
 
 
 ### Instalación entorno
