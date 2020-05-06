@@ -24,3 +24,17 @@ TEST(HardstingTest, alEjecutarPresiono_DeberiaEscribirEnAltoYPonerDelayDeCompens
 
     delete framework;
 }
+
+TEST(HardstingTest, alEjecutarSuelto_DeberiaEscribirEnBajoYPonerDelayDeCompensacion){
+
+    framework = new MockFramework();
+
+    EXPECT_CALL(*framework, consola(_)).Times(AtLeast(1));
+    EXPECT_CALL(*framework, escribir(2, 0)).Times(AtLeast(1));
+    EXPECT_CALL(*framework, demorar(2)).Times(AtLeast(1));
+
+    Hardsting* hardsting = new Hardsting(framework);
+    hardsting->suelto_(BOTON_ROJO);
+
+    delete framework;
+}
