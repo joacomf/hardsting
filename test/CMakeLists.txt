@@ -1,6 +1,6 @@
 add_executable(
     unit_tests
-    Hardsting/Hardsting_test.cpp
+    Hardsting/HardstingTest.cpp
     mocks/framework/FrameworkMock.hpp
 )
 
