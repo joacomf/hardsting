@@ -3,8 +3,6 @@
 
 #include <Hardsting/Hardsting.hpp>
 
-const int BOTON_ROJO = 2;
-
 TEST(ReporteTest, alGenerarReporteNoTieneNingunResultado) {
     auto* reporte = new Reporte();
     list<Resultado> resultados = reporte->obtenerResultados();
@@ -14,7 +12,7 @@ TEST(ReporteTest, alGenerarReporteNoTieneNingunResultado) {
 
 TEST(ReporteTest, alAgregarUnResultadoSeAlmacenaEnElReporte) {
     auto* reporte = new Reporte();
-    Resultado *resultado = new Resultado();
+    auto *resultado = new Resultado();
 
     reporte->nuevo(resultado);
     int cantidadDeResultados = reporte->obtenerResultados().size();
