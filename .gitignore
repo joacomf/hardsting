@@ -5,3 +5,5 @@
 .vscode/ipch
 
 build/
+.idea/
+cmake-build-debug/
