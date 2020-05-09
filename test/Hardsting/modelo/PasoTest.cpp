@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
-#include "Hardsting/modelo/Resultado.h"
+#include "Hardsting/modelo/Paso.h"
 
 TEST(ResultadoTest, seGeneraUnResultadoConNombrePaso) {
-    auto* resultado = new Resultado("Envia comando a pin 13");
+    auto* resultado = new Paso("Envia comando a pin 13");
 
     string nombreDelPaso = resultado->obtenerNombre();
 
@@ -10,7 +10,7 @@ TEST(ResultadoTest, seGeneraUnResultadoConNombrePaso) {
 }
 
 TEST(ResultadoTest, seObtieneElTiempoLuegoDeRegistrarInicioYFin) {
-    auto* resultado = new Resultado("Envia comando a pin 13");
+    auto* resultado = new Paso("Envia comando a pin 13");
     resultado->inicio(102450L);
     resultado->fin(103000L);
     unsigned long tiempo = resultado->tiempo();
@@ -19,7 +19,7 @@ TEST(ResultadoTest, seObtieneElTiempoLuegoDeRegistrarInicioYFin) {
 }
 
 TEST(ResultadoTest, alTenerMostrarUnResultadoOKSeExpresaElExitoNombreYTiempoTranscurrido) {
-    auto* resultado = new Resultado("Envia comando a pin 13");
+    auto* resultado = new Paso("Envia comando a pin 13");
 
     resultado->inicio(103540L);
     resultado->fin(103580L);
