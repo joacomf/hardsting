@@ -24,6 +24,8 @@ private:
         long tiempoInicio;
         long tiempoFin;
         bool esExitoso;
+
+    bool fueExitoso();
 };
 
 
