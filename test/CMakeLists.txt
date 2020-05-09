@@ -2,7 +2,13 @@ add_executable(
     unit_tests
     Hardsting/HardstingTest.cpp
     mocks/framework/FrameworkMock.hpp
-        ../src/Hardsting/modelo/Reporte.cpp ../src/Hardsting/modelo/Reporte.h Hardsting/modelo/ReporteTest.cpp ../src/Hardsting/modelo/Resultado.cpp ../src/Hardsting/modelo/Resultado.h)
+    ../src/Hardsting/modelo/Reporte.cpp
+    ../src/Hardsting/modelo/Reporte.h
+    Hardsting/modelo/ReporteTest.cpp
+        ../src/Hardsting/modelo/Resultado.cpp
+    ../src/Hardsting/modelo/Resultado.h
+
+        Hardsting/modelo/ResultadoTest.cpp)
 
 target_link_libraries(
     unit_tests

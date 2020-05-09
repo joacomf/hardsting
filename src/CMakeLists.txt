@@ -1,4 +1,4 @@
-add_library(aceptacion "" Hardsting/modelo/Reporte.cpp Hardsting/modelo/Reporte.h)
+add_library(aceptacion "")
 
 target_sources(
     aceptacion
