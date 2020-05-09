@@ -2,30 +2,30 @@
 #include "Hardsting/modelo/Paso.h"
 
 TEST(ResultadoTest, seGeneraUnResultadoConNombrePaso) {
-    auto* resultado = new Paso("Envia comando a pin 13");
+    auto* paso = new Paso("Envia comando a pin 13");
 
-    string nombreDelPaso = resultado->obtenerNombre();
+    string nombreDelPaso = paso->obtenerNombre();
 
     ASSERT_EQ(nombreDelPaso, "Envia comando a pin 13");
 }
 
 TEST(ResultadoTest, seObtieneElTiempoLuegoDeRegistrarInicioYFin) {
-    auto* resultado = new Paso("Envia comando a pin 13");
-    resultado->inicio(102450L);
-    resultado->fin(103000L);
-    unsigned long tiempo = resultado->tiempo();
+    auto* paso = new Paso("Envia comando a pin 13");
+    paso->inicio(102450L);
+    paso->fin(103000L);
+    unsigned long tiempo = paso->tiempo();
 
     ASSERT_EQ(tiempo, 550L);
 }
 
 TEST(ResultadoTest, alTenerMostrarUnResultadoOKSeExpresaElExitoNombreYTiempoTranscurrido) {
-    auto* resultado = new Paso("Envia comando a pin 13");
+    auto* paso = new Paso("Envia comando a pin 13");
 
-    resultado->inicio(103540L);
-    resultado->fin(103580L);
-    resultado->exito(false);
+    paso->inicio(103540L);
+    paso->fin(103580L);
+    paso->exito(false);
 
-    string resultadoExpresado = resultado->mostrar();
+    string resultado = paso->mostrar();
 
-    ASSERT_EQ(resultadoExpresado, "[FALLO] Envia comando a pin 13 - ejecuto en 40 useg");
+    ASSERT_EQ(resultado, "[FALLO] Envia comando a pin 13 - ejecuto en 40 useg");
 }

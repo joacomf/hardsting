@@ -1,14 +1,14 @@
-#ifndef BUILD_RESULTADO_H
-#define BUILD_RESULTADO_H
+#ifndef BUILD_PASO_H
+#define BUILD_PASO_H
 
 #include <string>
 
 using namespace std;
 
-class Resultado {
+class Paso {
     public:
-        Resultado();
-        explicit Resultado(const char* nombre);
+        Paso();
+        explicit Paso(const char* nombre);
         const char* obtenerNombre();
 
         void inicio(long microsegundos);
@@ -29,4 +29,4 @@ private:
 };
 
 
-#endif //BUILD_RESULTADO_H
+#endif //BUILD_PASO_H

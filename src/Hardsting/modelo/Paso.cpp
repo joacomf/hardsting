@@ -1,34 +1,34 @@
 #include <cstring>
-#include "Resultado.h"
+#include "Paso.h"
 
-Resultado::Resultado() = default;
+Paso::Paso() = default;
 
-Resultado::Resultado(const char* nombre) {
+Paso::Paso(const char* nombre) {
     this->nombre = nombre;
 }
 
-const char* Resultado::obtenerNombre() {
+const char* Paso::obtenerNombre() {
     return this->nombre;
 }
 
-void Resultado::inicio(long microsegundos) {
+void Paso::inicio(long microsegundos) {
     this->tiempoInicio = microsegundos;
 
 }
 
-void Resultado::fin(long microsegundos) {
+void Paso::fin(long microsegundos) {
     this->tiempoFin = microsegundos;
 }
 
-unsigned long Resultado::tiempo() const {
+unsigned long Paso::tiempo() const {
     return this->tiempoFin - this->tiempoInicio;
 }
 
-void Resultado::exito(bool valor) {
+void Paso::exito(bool valor) {
     this->esExitoso = valor;
 }
 
-string Resultado::mostrar() {
+string Paso::mostrar() {
     string mensajeExito = this->esExitoso ? string("[OK] ") : string("[FALLO] ");
     string mensajeTiempo = to_string(this->tiempo());
 
