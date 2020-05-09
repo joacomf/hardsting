@@ -9,7 +9,7 @@ using namespace std;
 class Escenario {
     public:
         list<Paso> obtenerResultados();
-        void nuevo(Paso *resultado);
+        void nuevo(Paso *paso);
 
     string imprimirFinal();
 

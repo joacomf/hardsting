@@ -4,18 +4,18 @@ list<Paso> Escenario::obtenerResultados() {
     return this->resultados;
 }
 
-void Escenario::nuevo(Paso* resultado) {
-    this->resultados.push_back(*resultado);
+void Escenario::nuevo(Paso* paso) {
+    this->resultados.push_back(*paso);
 }
 
 string Escenario::imprimirFinal() {
-    list<Paso>::iterator resultado;
-    string reporteFinal = string();
+    list<Paso>::iterator paso;
+    string reporteDeEscenario = string();
 
-    for (resultado = this->resultados.begin(); resultado != this->resultados.end(); ++resultado) {
-        reporteFinal.append(resultado->mostrar());
-        reporteFinal.append("\n");
+    for (paso = this->resultados.begin(); paso != this->resultados.end(); ++paso) {
+        reporteDeEscenario.append(paso->mostrar());
+        reporteDeEscenario.append("\n");
     }
 
-    return reporteFinal;
+    return reporteDeEscenario;
 }
