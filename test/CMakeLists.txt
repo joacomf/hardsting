@@ -5,10 +5,10 @@ add_executable(
         ../src/Hardsting/modelo/Escenario.cpp
         ../src/Hardsting/modelo/Escenario.h
         Hardsting/modelo/EscenarioTest.cpp
-        ../src/Hardsting/modelo/Resultado.cpp
-    ../src/Hardsting/modelo/Resultado.h
+        ../src/Hardsting/modelo/Paso.cpp
+        ../src/Hardsting/modelo/Paso.h
 
-        Hardsting/modelo/ResultadoTest.cpp)
+        Hardsting/modelo/PasoTest.cpp)
 
 target_link_libraries(
     unit_tests
