@@ -2,19 +2,19 @@
 #define BUILD_ESCENARIO_H
 
 #include <list>
-#include "Resultado.h"
+#include "Paso.h"
 
 using namespace std;
 
 class Escenario {
     public:
-        list<Resultado> obtenerResultados();
-        void nuevo(Resultado *resultado);
+        list<Paso> obtenerResultados();
+        void nuevo(Paso *resultado);
 
     string imprimirFinal();
 
 private:
-        list<Resultado> resultados;
+        list<Paso> resultados;
 };
 
 
