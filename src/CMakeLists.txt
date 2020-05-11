@@ -7,6 +7,7 @@ target_sources(
           
     PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/Hardsting/Hardsting.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/Hardsting/modelo/Escenario.hpp
         ${CMAKE_CURRENT_LIST_DIR}/Hardsting/palabras-claves.hpp
     )
 
