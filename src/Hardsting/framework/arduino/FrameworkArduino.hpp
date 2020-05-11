@@ -14,6 +14,7 @@ class FrameworkArduino: public Framework{
         void escribir(int pin, int valor);
         int leer(int pin);
         long milisegundos();
+        long microsegundos();
         void demorar(int milisegundos);
         void consola(string mensaje);
 

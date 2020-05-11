@@ -16,6 +16,10 @@ long FrameworkArduino::milisegundos(){
     return millis();
 }
 
+long FrameworkArduino::microsegundos() {
+    return micros();
+}
+
 void FrameworkArduino::demorar(int milisegundos){
     delay(milisegundos);
 }

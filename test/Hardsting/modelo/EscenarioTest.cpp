@@ -2,18 +2,16 @@
 #include "Hardsting/modelo/Paso.hpp"
 #include "Hardsting/modelo/Escenario.hpp"
 
-#include <Hardsting/Hardsting.hpp>
-
 TEST(ReporteTest, alGenerarReporteNoTieneNingunResultado) {
-    auto* escenario = new Escenario();
+    auto* escenario = new Escenario("Escenario nulo");
     list<Paso> pasos = escenario->obtenerResultados();
 
     ASSERT_EQ(pasos.size(), 0);
 }
 
 TEST(ReporteTest, alAgregarUnResultadoSeAlmacenaEnElReporte) {
-    auto* escenario = new Escenario();
-    auto *paso = new Paso();
+    auto* escenario = new Escenario("Espera al presionar botón");
+    auto *paso = new Paso("Presiona botón en pin 13");
 
     escenario->nuevo(paso);
     int cantidadDeResultados = escenario->obtenerResultados().size();
@@ -22,7 +20,7 @@ TEST(ReporteTest, alAgregarUnResultadoSeAlmacenaEnElReporte) {
 }
 
 TEST(ReporteTest, alMostrarElReporteFinalSeListaEnUnaLineaCadaResultado) {
-    auto* escenario = new Escenario();
+    auto* escenario = new Escenario("Deja de recibir comando en pin 1 para pasar comando al pin 12");
     
     auto *paso1 = new Paso("Recibe comando en el pin 1");
     paso1->inicio(0);
@@ -48,5 +46,5 @@ TEST(ReporteTest, alMostrarElReporteFinalSeListaEnUnaLineaCadaResultado) {
     string reporteFinal = escenario->imprimirFinal();
 
     ASSERT_EQ(cantidadDeResultados, 3);
-    ASSERT_EQ("[OK] Recibe comando en el pin 1 - ejecuto en 100 useg\n[OK] Deja de recibir comando en el pin 1 - ejecuto en 40 useg\n[FALLO] Recibe comando en el pin 12 - ejecuto en 170 useg\n", reporteFinal);
+    ASSERT_EQ("Escenario: Deja de recibir comando en pin 1 para pasar comando al pin 12\n\n[OK] Recibe comando en el pin 1 - ejecuto en 100 useg\n[OK] Deja de recibir comando en el pin 1 - ejecuto en 40 useg\n[FALLO] Recibe comando en el pin 12 - ejecuto en 170 useg\n", reporteFinal);
 }

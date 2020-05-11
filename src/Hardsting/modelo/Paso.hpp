@@ -8,8 +8,8 @@ using namespace std;
 class Paso {
     public:
         Paso();
-        explicit Paso(const char* nombre);
-        const char* obtenerNombre();
+        explicit Paso(string nombre);
+        string obtenerNombre();
 
         void inicio(long microsegundos);
         void fin(long microsegundos);
@@ -20,12 +20,12 @@ class Paso {
         string mostrar();
 
 private:
-        const char* nombre;
+        string nombre;
         long tiempoInicio;
         long tiempoFin;
-        bool esExitoso;
+        bool esExitoso = false;
 
-    bool fueExitoso();
+        bool fueExitoso();
 };
 
 

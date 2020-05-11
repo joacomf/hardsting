@@ -3,11 +3,11 @@
 
 Paso::Paso() = default;
 
-Paso::Paso(const char* nombre) {
+Paso::Paso(string nombre) {
     this->nombre = nombre;
 }
 
-const char* Paso::obtenerNombre() {
+string Paso::obtenerNombre() {
     return this->nombre;
 }
 

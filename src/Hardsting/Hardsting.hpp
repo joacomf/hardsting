@@ -6,6 +6,8 @@ using namespace std;
 
 #include "framework/Framework.hpp"
 #include "palabras-claves.hpp"
+#include "Hardsting/modelo/Escenario.hpp"
+#include "Hardsting/modelo/Paso.hpp"
 
 #define DELAY_COMPESACION 2
 #define BAJO 0x0
@@ -17,7 +19,7 @@ class Hardsting {
         Framework* framework;
 
     public:
-        Hardsting(Framework* framework);
+        explicit Hardsting(Framework* framework);
         void presiono_(int boton);
         void suelto_(int boton);
         bool deberia_encender_(int led, int segundos);
@@ -29,8 +31,16 @@ class Hardsting {
         void empieza(string nombre);
         void termina(string nombre);
 
+        string imprimir_reporte();
+        void nuevo_escenario(const char* string);
+
         ~Hardsting();
 
+    void termina_escenario();
+
+private:
+        list<Escenario> escenarios;
+        Escenario *escenario;
 };
 
 #endif
