@@ -7,42 +7,70 @@ Hardsting::Hardsting(Framework* framework) {
 }
 
 void Hardsting::presiono_(int boton){
+  string nombre = string("Presiono componente en el pin " + to_string(boton));
+  Paso* paso = new Paso(nombre);
+  paso->inicio(this->framework->microsegundos());
+
   this->framework->escribir(boton, ALTO);
   this->framework->demorar(DELAY_COMPESACION);
+
+  paso->fin(this->framework->microsegundos());
+  paso->exito(true);
+  escenario->nuevo(paso);
 }
 
 void Hardsting::suelto_(int boton){
+  string nombre = string("Suelto componente en el pin " + to_string(boton)).c_str();
+  Paso* paso = new Paso(nombre);
+  paso->inicio(this->framework->microsegundos());
+
   this->framework->escribir(boton, BAJO);
   this->framework->demorar(DELAY_COMPESACION);
+
+  paso->fin(this->framework->microsegundos());
+  paso->exito(true);
+  escenario->nuevo(paso);
 }
 
 bool Hardsting::deberia_encender_(int led, int segundos) {
+  string nombre = string("Enciende LED en el pin " + to_string(led)).c_str();
+  Paso* paso = new Paso(nombre);
+  paso->inicio(this->framework->microsegundos());
+
   long espera = segundos * 1000L;
   long tiempo_inicial = this->framework->milisegundos();
 
   while(this->framework->milisegundos() - tiempo_inicial < espera){
     if (this->framework->leer(led) == ALTO) {
-      this->framework->consola("[OK] Encendió LED");
+      paso->fin(this->framework->microsegundos());
+      paso->exito(true);
+      this->escenario->nuevo(paso);
       return true;
     }
   }
 
-  this->framework->consola("[FALLÓ] Encendió LED");
+  this->escenario->nuevo(paso);
   return false;
 }
 
 bool Hardsting::deberia_apagar_(int led, int segundos) {
+  string nombre = string("Apaga LED en el pin " + to_string(led)).c_str();
+  Paso* paso = new Paso(nombre);
+  paso->inicio(this->framework->microsegundos());
+
   long espera = segundos * 1000L;
   long tiempo_inicial = this->framework->milisegundos();
 
   while(this->framework->milisegundos() - tiempo_inicial < espera){
     if (this->framework->leer(led) == BAJO) {
-      this->framework->consola("[OK] Apagó LED");
+      paso->fin(this->framework->microsegundos());
+      paso->exito(true);
+      this->escenario->nuevo(paso);
       return true;
     }
   }
 
-  this->framework->consola("[FALLÓ] Apagó LED");
+  this->escenario->nuevo(paso);
   return false;
 }
 
@@ -60,4 +88,25 @@ void Hardsting::empieza(string nombre) {
 
 void Hardsting::termina(string nombre) {
   this->framework->consola("Termina " + nombre + "\n");
+}
+
+string Hardsting::imprimir_reporte() {
+    string reporteFinal = string();
+
+    list<Escenario>::iterator escenario;
+
+    for (escenario = this->escenarios.begin(); escenario != this->escenarios.end(); ++escenario) {
+        reporteFinal.append(escenario->imprimirFinal());
+        reporteFinal.append("\n");
+    }
+
+    return reporteFinal;
+}
+
+void Hardsting::nuevo_escenario(const char *nombreDeEscenario) {
+    this->escenario = new Escenario(nombreDeEscenario);
+}
+
+void Hardsting::termina_escenario() {
+    this->escenarios.push_back(*this->escenario);
 }
