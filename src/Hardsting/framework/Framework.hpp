@@ -14,6 +14,8 @@ class Framework {
 
         virtual void configurar_pin_entrada(int pin) = 0;
         virtual void configurar_pin_salida(int pin) = 0;
+
+        virtual long microsegundos() = 0;
 };
 
 #endif
