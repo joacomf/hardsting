@@ -1,8 +1,8 @@
-#ifndef BUILD_ESCENARIO_H
-#define BUILD_ESCENARIO_H
+#ifndef BUILD_ESCENARIO_HPP
+#define BUILD_ESCENARIO_HPP
 
 #include <list>
-#include "Paso.h"
+#include "Paso.hpp"
 
 using namespace std;
 
@@ -18,4 +18,4 @@ private:
 };
 
 
-#endif //BUILD_ESCENARIO_H
+#endif //BUILD_ESCENARIO_HPP

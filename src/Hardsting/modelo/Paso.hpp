@@ -1,5 +1,5 @@
-#ifndef BUILD_PASO_H
-#define BUILD_PASO_H
+#ifndef BUILD_PASO_HPP
+#define BUILD_PASO_HPP
 
 #include <string>
 
@@ -29,4 +29,4 @@ private:
 };
 
 
-#endif //BUILD_PASO_H
+#endif //BUILD_PASO_HPP

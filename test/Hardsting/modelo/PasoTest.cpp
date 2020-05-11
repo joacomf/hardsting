@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "Hardsting/modelo/Paso.h"
+#include "Hardsting/modelo/Paso.hpp"
 
 TEST(ResultadoTest, seGeneraUnResultadoConNombrePaso) {
     auto* paso = new Paso("Envia comando a pin 13");

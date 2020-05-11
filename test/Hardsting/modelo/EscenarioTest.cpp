@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
-#include "Hardsting/modelo/Paso.h"
+#include "Hardsting/modelo/Paso.hpp"
+#include "Hardsting/modelo/Escenario.hpp"
 
 #include <Hardsting/Hardsting.hpp>
 

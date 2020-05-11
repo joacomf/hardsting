@@ -1,4 +1,4 @@
-#include "Escenario.h"
+#include "Escenario.hpp"
 
 list<Paso> Escenario::obtenerResultados() {
     return this->resultados;

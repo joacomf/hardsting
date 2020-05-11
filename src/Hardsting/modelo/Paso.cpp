@@ -1,5 +1,5 @@
 #include <cstring>
-#include "Paso.h"
+#include "Paso.hpp"
 
 Paso::Paso() = default;
 

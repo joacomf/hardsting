@@ -3,10 +3,10 @@ add_executable(
     Hardsting/HardstingTest.cpp
     mocks/framework/FrameworkMock.hpp
         ../src/Hardsting/modelo/Escenario.cpp
-        ../src/Hardsting/modelo/Escenario.h
+        ../src/Hardsting/modelo/Escenario.hpp
         Hardsting/modelo/EscenarioTest.cpp
         ../src/Hardsting/modelo/Paso.cpp
-        ../src/Hardsting/modelo/Paso.h
+        ../src/Hardsting/modelo/Paso.hpp
 
         Hardsting/modelo/PasoTest.cpp)
 
