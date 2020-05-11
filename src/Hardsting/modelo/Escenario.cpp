@@ -1,5 +1,9 @@
 #include "Escenario.hpp"
 
+Escenario::Escenario(const char *nombre) {
+    this->nombre = nombre;
+}
+
 list<Paso> Escenario::obtenerResultados() {
     return this->resultados;
 }

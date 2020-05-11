@@ -8,13 +8,16 @@ using namespace std;
 
 class Escenario {
     public:
-        list<Paso> obtenerResultados();
+    explicit Escenario(const char* string);
+
+    list<Paso> obtenerResultados();
         void nuevo(Paso *paso);
 
     string imprimirFinal();
 
-private:
+    private:
         list<Paso> resultados;
+        const char *nombre;
 };
 
 
