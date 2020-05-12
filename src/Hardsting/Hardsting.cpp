@@ -80,6 +80,7 @@ void Hardsting::pin_de_entrada(int pin) {
 
 void Hardsting::pin_de_salida(int pin) {
   this->framework->configurar_pin_salida(pin);
+  this->framework->escribir(pin, BAJO);
 }
 
 void Hardsting::empieza(string nombre) {
