@@ -32,15 +32,14 @@ void Hardsting::suelto_(int boton){
   escenario->nuevo(paso);
 }
 
-bool Hardsting::deberia_encender_(int led, int segundos) {
+bool Hardsting::deberia_encender_(int led, int microsegundos) {
   string nombre = string("Enciende LED en el pin " + literal(led));
   Paso* paso = new Paso(nombre);
   paso->inicio(this->framework->microsegundos());
 
-  long espera = segundos * 1000L;
   long tiempo_inicial = this->framework->milisegundos();
 
-  while(this->framework->milisegundos() - tiempo_inicial < espera){
+  while(this->framework->milisegundos() - tiempo_inicial < microsegundos){
     if (this->framework->leer(led) == ALTO) {
       paso->fin(this->framework->microsegundos());
       paso->exito(true);
@@ -53,15 +52,14 @@ bool Hardsting::deberia_encender_(int led, int segundos) {
   return false;
 }
 
-bool Hardsting::deberia_apagar_(int led, int segundos) {
+bool Hardsting::deberia_apagar_(int led, int microsegundos) {
   string nombre = string("Apaga LED en el pin " + literal(led));
   Paso* paso = new Paso(nombre);
   paso->inicio(this->framework->microsegundos());
 
-  long espera = segundos * 1000L;
   long tiempo_inicial = this->framework->milisegundos();
 
-  while(this->framework->milisegundos() - tiempo_inicial < espera){
+  while(this->framework->milisegundos() - tiempo_inicial < microsegundos){
     if (this->framework->leer(led) == BAJO) {
       paso->fin(this->framework->microsegundos());
       paso->exito(true);

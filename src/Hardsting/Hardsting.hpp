@@ -23,8 +23,8 @@ class Hardsting {
         explicit Hardsting(Framework* framework);
         void presiono_(int boton);
         void suelto_(int boton);
-        bool deberia_encender_(int led, int segundos);
-        bool deberia_apagar_(int led, int segundos);
+        bool deberia_encender_(int led, int microsegundos);
+        bool deberia_apagar_(int led, int microsegundos);
 
         void pin_de_entrada(int pin);
         void pin_de_salida(int pin);
