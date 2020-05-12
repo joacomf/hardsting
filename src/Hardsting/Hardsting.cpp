@@ -12,11 +12,12 @@ void Hardsting::presiono_(int boton){
   paso->inicio(this->framework->microsegundos());
 
   this->framework->escribir(boton, ALTO);
-  this->framework->demorar(DELAY_COMPESACION);
 
   paso->fin(this->framework->microsegundos());
   paso->exito(true);
   escenario->nuevo(paso);
+
+  this->framework->demorar(DELAY_COMPESACION);
 }
 
 void Hardsting::suelto_(int boton){
@@ -25,11 +26,12 @@ void Hardsting::suelto_(int boton){
   paso->inicio(this->framework->microsegundos());
 
   this->framework->escribir(boton, BAJO);
-  this->framework->demorar(DELAY_COMPESACION);
 
   paso->fin(this->framework->microsegundos());
   paso->exito(true);
   escenario->nuevo(paso);
+
+  this->framework->demorar(DELAY_COMPESACION);
 }
 
 bool Hardsting::deberia_encender_(int led, int microsegundos) {
