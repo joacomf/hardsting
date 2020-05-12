@@ -8,6 +8,7 @@ using namespace std;
 #include "palabras-claves.hpp"
 #include "Hardsting/modelo/Escenario.hpp"
 #include "Hardsting/modelo/Paso.hpp"
+#include "Hardsting/utils/string-util.hpp"
 
 #define DELAY_COMPESACION 2
 #define BAJO 0x0
@@ -33,10 +34,9 @@ class Hardsting {
 
         string imprimir_reporte();
         void nuevo_escenario(const char* string);
+        void termina_escenario();
 
         ~Hardsting();
-
-    void termina_escenario();
 
 private:
         list<Escenario> escenarios;

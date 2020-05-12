@@ -1,4 +1,3 @@
-#include <cstring>
 #include "Paso.hpp"
 
 Paso::Paso() = default;
@@ -30,7 +29,7 @@ void Paso::exito(bool valor) {
 
 string Paso::mostrar() {
     string mensajeExito = this->esExitoso ? string("[OK] ") : string("[FALLO] ");
-    string mensajeTiempo = to_string(this->tiempo());
+    string mensajeTiempo = literal(this->tiempo());
 
     return  mensajeExito.append(this->obtenerNombre())
                         .append(" - ejecuto en ")

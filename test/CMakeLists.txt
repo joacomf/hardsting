@@ -8,7 +8,8 @@ add_executable(
         ../src/Hardsting/modelo/Paso.cpp
         ../src/Hardsting/modelo/Paso.hpp
 
-        Hardsting/modelo/PasoTest.cpp)
+        Hardsting/modelo/PasoTest.cpp
+        ../src/Hardsting/utils/string-util.hpp)
 
 target_link_libraries(
     unit_tests

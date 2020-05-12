@@ -7,7 +7,7 @@ Hardsting::Hardsting(Framework* framework) {
 }
 
 void Hardsting::presiono_(int boton){
-  string nombre = string("Presiono componente en el pin " + to_string(boton));
+  string nombre = string("Presiono componente en el pin " + literal(boton));
   Paso* paso = new Paso(nombre);
   paso->inicio(this->framework->microsegundos());
 
@@ -20,7 +20,7 @@ void Hardsting::presiono_(int boton){
 }
 
 void Hardsting::suelto_(int boton){
-  string nombre = string("Suelto componente en el pin " + to_string(boton)).c_str();
+  string nombre = string("Suelto componente en el pin " + literal(boton));
   Paso* paso = new Paso(nombre);
   paso->inicio(this->framework->microsegundos());
 
@@ -33,7 +33,7 @@ void Hardsting::suelto_(int boton){
 }
 
 bool Hardsting::deberia_encender_(int led, int segundos) {
-  string nombre = string("Enciende LED en el pin " + to_string(led)).c_str();
+  string nombre = string("Enciende LED en el pin " + literal(led));
   Paso* paso = new Paso(nombre);
   paso->inicio(this->framework->microsegundos());
 
@@ -54,7 +54,7 @@ bool Hardsting::deberia_encender_(int led, int segundos) {
 }
 
 bool Hardsting::deberia_apagar_(int led, int segundos) {
-  string nombre = string("Apaga LED en el pin " + to_string(led)).c_str();
+  string nombre = string("Apaga LED en el pin " + literal(led));
   Paso* paso = new Paso(nombre);
   paso->inicio(this->framework->microsegundos());
 
@@ -99,6 +99,8 @@ string Hardsting::imprimir_reporte() {
         reporteFinal.append(escenario->imprimirFinal());
         reporteFinal.append("\n");
     }
+
+    this->framework->consola(reporteFinal);
 
     return reporteFinal;
 }

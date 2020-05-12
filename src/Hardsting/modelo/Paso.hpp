@@ -1,6 +1,7 @@
 #ifndef BUILD_PASO_HPP
 #define BUILD_PASO_HPP
 
+#include "Hardsting/utils/string-util.hpp"
 #include <string>
 
 using namespace std;
