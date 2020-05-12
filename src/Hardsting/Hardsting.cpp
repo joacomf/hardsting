@@ -48,6 +48,7 @@ bool Hardsting::deberia_encender_(int led, int microsegundos) {
     }
   }
 
+  paso->fin(this->framework->microsegundos());
   this->escenario->nuevo(paso);
   return false;
 }
@@ -68,6 +69,7 @@ bool Hardsting::deberia_apagar_(int led, int microsegundos) {
     }
   }
 
+  paso->fin(this->framework->microsegundos());
   this->escenario->nuevo(paso);
   return false;
 }
