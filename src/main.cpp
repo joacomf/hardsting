@@ -18,7 +18,7 @@ prueba presionar_boton_enciende_led(){
   hardsting->nuevo_escenario("presionar boton enciende led");
 
   cuando->presiono_(BOTON_ROJO);
-  entonces->deberia_encender_(LED_ROJO, 2);
+  entonces->deberia_encender_(LED_ROJO, 50);
 
   hardsting->termina_escenario();
 }
@@ -27,9 +27,9 @@ prueba presionar_boton_enciende_led_al_presionarlo_nuevamente_lo_apaga(){
   hardsting->nuevo_escenario("presionar boton enciende led al presionarlo nuevamente lo apaga");
 
   cuando->presiono_(BOTON_ROJO);
-  entonces->deberia_encender_(LED_ROJO, 2);
+  entonces->deberia_encender_(LED_ROJO, 50);
   y_->suelto_(BOTON_ROJO);
-  entonces->deberia_apagar_(LED_ROJO, 2);
+  entonces->deberia_apagar_(LED_ROJO, 50);
 
   hardsting->termina_escenario();
 }
