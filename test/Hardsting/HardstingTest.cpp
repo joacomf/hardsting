@@ -83,9 +83,9 @@ TEST(HardstingTest, alTerminarLaEjecucionImprimeElReporteDeTodosLosEscenarios){
 
     hardsting->nuevo_escenario("Enciende led verde al presionar el boton rojo y apaga el mismo al soltarlo");
     hardsting->presiono_(BOTON_ROJO);
-    hardsting->deberia_encender_(LED_VERDE, 1);
+    hardsting->deberia_encender_(LED_VERDE, 1000);
     hardsting->suelto_(BOTON_ROJO);
-    hardsting->deberia_apagar_(LED_VERDE, 1);
+    hardsting->deberia_apagar_(LED_VERDE, 1000);
     hardsting->termina_escenario();
 
     string reporte = hardsting->imprimir_reporte();
